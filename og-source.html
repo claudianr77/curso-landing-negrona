@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{width:1200px;height:630px;overflow:hidden;}
+  body{
+    font-family:'Inter',sans-serif;
+    background-color:#F7F2EC;
+    background-image:
+      radial-gradient(ellipse 900px 700px at 6% -10%, rgba(147,148,174,0.5), transparent 60%),
+      radial-gradient(ellipse 800px 650px at 100% 0%, rgba(223,227,142,0.55), transparent 60%),
+      radial-gradient(ellipse 1000px 800px at 90% 120%, rgba(208,133,121,0.4), transparent 60%),
+      radial-gradient(ellipse 700px 600px at 0% 110%, rgba(147,148,174,0.28), transparent 60%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+  .eyebrow{
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:#9394AE;
+    margin-bottom:20px;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,0.55);
+    border:2px solid #DFE38E;
+    color:#2B2A28;
+    font-size:20px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:10px 22px;
+    border-radius:30px;
+    margin-bottom:26px;
+  }
+  .dot{width:9px;height:9px;border-radius:50%;background:#9394AE;}
+  .headline{color:#9394AE;line-height:0.78;}
+  .line-1{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.005em;
+    text-transform:uppercase;
+    font-size:58px;
+  }
+  .line-2{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:480;
+    letter-spacing:-0.03em;
+    line-height:0.9;
+    font-size:96px;
+    font-variation-settings:"opsz" 144, "SOFT" 60, "WONK" 1;
+    margin-top:10px;
+  }
+</style>
+</head>
+<body>
+  <div class="eyebrow">Aprende a crear en un estilo realista</div>
+  <div class="badge"><span class="dot"></span>Próximamente</div>
+  <h1 class="headline">
+    <span class="line-1">Hemos cerrado!</span>
+    <span class="line-2">pero abriremos pronto</span>
+  </h1>
+</body>
+</html>
