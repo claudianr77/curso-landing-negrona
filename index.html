@@ -287,6 +287,8 @@
     formMsg.classList.add('show');
   }
 
+  const WEB3FORMS_ACCESS_KEY = 'PON_AQUI_TU_ACCESS_KEY';
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = emailInput.value.trim();
@@ -296,26 +298,27 @@
     joinBtn.textContent = 'Enviando…';
 
     try{
-      const res = await fetch('/api/waitlist', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ email })
+        headers:{'Content-Type':'application/json', Accept:'application/json'},
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: 'Nueva persona en tu lista de espera',
+          email: email,
+          message: `${email} se acaba de anotar para enterarse cuando abras los cupos.`
+        })
       });
       const data = await res.json();
 
-      if(!res.ok){
-        showMsg(data.error || 'Algo salió mal, intenta de nuevo.', true);
+      if(!data.success){
+        showMsg('Algo salió mal, intenta de nuevo.', true);
         joinBtn.disabled = false;
         joinBtn.textContent = 'Avísame';
         return;
       }
 
       form.style.display = 'none';
-      if(data.duplicate){
-        showMsg('Ya estabas en la lista — te avisaremos apenas se abran los cupos.', false);
-      } else {
-        showMsg('¡Listo! Te avisaremos apenas se abran los cupos.', false);
-      }
+      showMsg('¡Listo! Te avisaremos apenas se abran los cupos.', false);
     }catch(err){
       showMsg('No pudimos conectar. Intenta de nuevo en un momento.', true);
       joinBtn.disabled = false;
