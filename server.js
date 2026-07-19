@@ -27,7 +27,7 @@ async function notifyWaitlistSignup(email) {
     console.log(`[waitlist] Nuevo registro: ${email} (configura RESEND_API_KEY para recibir un correo de aviso)`);
     return;
   }
-  const notifyTo = process.env.WAITLIST_NOTIFY_EMAIL || 'hola@claudianegron.com';
+  const notifyTo = process.env.WAITLIST_NOTIFY_EMAIL || 'claudia.07nr@gmail.com';
   try {
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
