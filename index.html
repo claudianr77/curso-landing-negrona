@@ -92,13 +92,12 @@
   .hero{
     max-width:720px;
     margin:0 auto;
-    padding:40px 24px;
+    padding:56px 24px 16px;
     text-align:center;
     position:relative;
-    flex:1;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
   }
 
@@ -219,20 +218,49 @@
   .form-msg.show{display:block;}
   .form-msg.error{background:#C24545;color:var(--white);}
 
+  /* ── Portrait showcase ──────────────────────────────── */
+  .portrait{
+    position:relative;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:-24px;
+  }
+  .portrait picture{
+    display:block;
+    padding:0 24px;
+  }
+  .portrait img{
+    width:100%;
+    max-width:560px;
+    height:auto;
+    display:block;
+    filter:drop-shadow(0 30px 60px rgba(43,42,40,0.28));
+  }
+  .portrait .floor-line{
+    width:100%;
+    height:1.5px;
+    background:var(--purple-30);
+    margin-top:0;
+  }
+
   /* ── Footer ──────────────────────────────────────── */
   footer{
     max-width:1080px;
-    margin:64px auto 0;
-    padding:24px 24px 32px;
+    margin:0 auto;
+    padding:14px 24px;
+    flex:1;
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    border-top:1px solid var(--purple-30);
+    justify-content:center;
     font-size:0.78rem;
     color:var(--ink-soft);
-    gap:12px;
+    gap:10px;
     flex-wrap:wrap;
   }
+
+  .dot-sep{color:var(--purple-30);}
 
   .footer-ig{
     display:inline-flex;
@@ -276,8 +304,17 @@
     </div>
   </section>
 
+  <section class="portrait">
+    <picture>
+      <source srcset="assets/retrato-negrona.webp" type="image/webp">
+      <img src="assets/retrato-negrona.png" alt="Retrato realista de mascota pintado por Claudia" loading="lazy" width="1400" height="1492">
+    </picture>
+    <div class="floor-line"></div>
+  </section>
+
   <footer>
     <span>&copy; 2026</span>
+    <span class="dot-sep">·</span>
     <a class="footer-ig" href="https://instagram.com/negrona_art" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
       @negrona_art
